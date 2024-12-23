@@ -18,7 +18,9 @@ variables:
   environmentName: 'javawebapp4001'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  #vmImageName: 'ubuntu-latest'
+  #pool:
+   #name: default # Use the default agent pool
 
 stages:
 - stage: Build
@@ -27,7 +29,7 @@ stages:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
     pool:
-      vmImage: $(vmImageName)
+     name: default # Use the default agent pool
 
     steps:
     - task: Maven@4
@@ -61,7 +63,7 @@ stages:
     displayName: Deploy Linux Web App
     environment: $(environmentName)
     pool:
-      vmImage: $(vmImageName)
+      name: default # Use the default agent pool
     strategy:
       runOnce:
         deploy:
