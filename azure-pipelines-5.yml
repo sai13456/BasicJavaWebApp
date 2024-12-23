@@ -13,7 +13,7 @@ stages:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
     pool:
-      vmImage: 'ubuntu-latest'  # Use Microsoft-hosted agent
+      vmImage: 'Default'  # Use Microsoft-hosted agent
     steps:
     - task: Maven@4
       displayName: 'Maven Package'
