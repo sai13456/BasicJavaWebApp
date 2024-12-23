@@ -27,8 +27,8 @@ stages:
   jobs:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
-    pool:
-     name: default # Use the default agent pool
+    #pool:
+     #name: default # Use the default agent pool
 
     steps:
     - task: Maven@4
@@ -61,8 +61,8 @@ stages:
   - deployment: DeployLinuxWebApp
     displayName: Deploy Linux Web App
     environment: $(environmentName)
-    pool:
-      name: default # Use the default agent pool
+    #pool:
+      #name: default # Use the default agent pool
     strategy:
       runOnce:
         deploy:
