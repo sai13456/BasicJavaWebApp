@@ -18,8 +18,8 @@ variables:
   environmentName: 'javawebapp4001'
 
   # Agent VM image name
-  pool:
-  name: default # Use the default agent pool
+  #pool:
+  #name: default # Use the default agent pool
 
 stages:
 - stage: Build
